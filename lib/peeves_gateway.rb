@@ -266,7 +266,7 @@ private
   end
 
   def commit!(action)
-    response = Peeves::Net::HttpsGateway.new(url_for(action), true, debug?).send({}, @post.to_post_data)
+    response = Peeves::Net::HttpsGateway.new(url_for(action), true, debug?).send({}, @post.to_s)
     Peeves::ProtxResponse.new(response)
   end
 
