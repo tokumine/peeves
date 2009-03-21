@@ -27,8 +27,9 @@ class PeevesGateway
     "NOTMATCHED" => 'N'
   }
     
-  def initialize(mode=Peeves::Config::GATEWAY_MODE)
+  def initialize(mode=Peeves::Config::GATEWAY_MODE, server_type=Peeves::Config::SERVER_TYPE)
     @mode = mode
+    @server_type = server_type
   end
   
   def debug=(value)
@@ -262,7 +263,7 @@ class PeevesGateway
   
 private
   def url_for(action)
-    BASE_URL[@mode] + SERVICE[@mode][action]
+    BASE_URL[@server_type][@mode] + SERVICE[@server_type][@mode][action]
   end
 
   def commit!(action)
