@@ -61,6 +61,7 @@ class PeevesGateway
     add_registration(money, options)
     add_customer(options)
     add_basket(options)
+    add_credit_card(options)
     
     commit! :payment
   end
@@ -87,6 +88,7 @@ class PeevesGateway
     add_registration(money, options)
     add_customer(options)
     add_basket(options)
+    add_credit_card(options) 
     
     commit! :payment
   end
@@ -114,6 +116,7 @@ class PeevesGateway
     add_registration(money, options)
     add_customer(options)
     add_basket(options)
+    add_credit_card(options)
     
     commit! :deferred
   end  
@@ -336,7 +339,19 @@ private
   
   def add_basket(options)
     unless options[:basket].nil?
-      @post["Basket"]             = options[:basket].to_post_data
+      @post["Basket"]             = options[:basket].to_s
+    end
+  end
+
+  def add_credit_card(options)
+    unless options[:customer_data][:credit_card].nil?
+      @post["CardHolder"]         = options[:customer_data][:credit_card].card_holder
+      @post["CardNumber"]         = options[:customer_data][:credit_card].card_number
+      @post["StartDate"]          = options[:customer_data][:credit_card].start_month + options[:customer_data][:credit_card].start_year 
+      @post["ExpiryDate"]         = options[:customer_data][:credit_card].expiry_month + options[:customer_data][:credit_card].expiry_year
+      @post["CardType"]           = options[:customer_data][:credit_card].card_type
+      @post["CV2"]                = options[:customer_data][:credit_card].cv2
+      @post["IssueNumber"]        = options[:customer_data][:credit_card].issue_number
     end
   end
 

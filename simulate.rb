@@ -18,7 +18,17 @@ customer_data = Peeves::CustomerData.new(:surname => 'blah',
                                          :post_code => 'blah',
                                          :country => 'gb',
                                          :email => 'customer@email.com'
-                                        )
+                                        )                                      
+credit_card_data = Peeves::CreditCardData.new(:card_holder => 'blah', 
+                                              :card_number => '4111111111111111', 
+                                              :start_month => '01', 
+                                              :start_year => '01', 
+                                              :expiry_month => '10', 
+                                              :expiry_year => '10', 
+                                              :card_type => 'VISA', 
+                                              :cv2 => '111', 
+                                              :issue_number => '1'
+                                              )
 
 # Payment registration
 payment_response = p.payment(Peeves::Money.new(1000, "GBP"),
@@ -28,7 +38,8 @@ payment_response = p.payment(Peeves::Money.new(1000, "GBP"),
                 :notification_url      => "http://test.example.com",
                 :customer_data         => { :billing  => customer_data,
                                             :delivery => customer_data,
-                                            :email    => customer_data.email }
+                                            :email    => customer_data.email,
+                                            :credit_card => credit_card_data }
               })
 
 puts payment_response.inspect
