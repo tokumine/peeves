@@ -44,6 +44,13 @@ payment_response = p.payment(Peeves::Money.new(1000, "GBP"),
 
 puts payment_response.inspect
 
+
+three_dee_response = p.three_dee({:md   => "061835130918985507",
+                                  :pares => "testing"
+              })
+
+puts three_dee_response.inspect
+
 # Not yet working
 # Issue with :related_transaction_authorisation_number which needs to come from
 # A3: Notification of Results for Transactions

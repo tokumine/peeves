@@ -50,6 +50,7 @@ class PeevesGateway
   # => notification_url (required, String)
   # => billing_data (optional, BillingData)
   # => basket (optional, Basket)
+  # => credit_card (optional, CreditCardData)
   # Response:
   # => status
   # => status_detail
@@ -77,6 +78,7 @@ class PeevesGateway
   # => notification_url (required, String)
   # => billing_data (optional, BillingData)
   # => basket (optional, Basket)
+  # => credit_card (optional, CreditCardData)  
   # Response:
   # => status
   # => status_detail
@@ -105,6 +107,7 @@ class PeevesGateway
   # => notification_url (required, String)
   # => billing_data (optional, BillingData)
   # => basket (optional, Basket)
+  # => credit_card (optional, CreditCardData)  
   # Response:
   # => status
   # => status_detail
@@ -254,6 +257,21 @@ class PeevesGateway
     commit! :refund
   end
   
+  # Your site POSTs the 3D-Secure results to Protx 
+  # Options:
+  # => md (required, String(40))
+  # => pares (required, String(100))
+  # Response:
+  # => status
+  # => status_detail
+  # TODO: UPDATE
+  def three_dee(options)
+    add_three_dee_result(options)
+    
+    commit! :threedee
+  end
+  
+  
   def self.parse_notification(params)
     Peeves::ProtxResponse.new(params).verify!
   end
@@ -353,6 +371,12 @@ private
       @post["CV2"]                = options[:customer_data][:credit_card].cv2
       @post["IssueNumber"]        = options[:customer_data][:credit_card].issue_number
     end
+  end
+
+  def add_three_dee_result(options)
+    @post = Peeves::PostData.new
+    @post["MD"]                   = options[:md]
+    @post["PARes"]                = options[:pares]    
   end
 
   def requires!(hash, *params)
