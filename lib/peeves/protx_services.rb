@@ -29,28 +29,28 @@ module Peeves
           :cancel       => '?Service=VendorCancelTx'
         },
         :test => {
-          :payment      => 'vspserver-register.vsp',
-          :release      => 'release.vsp',
-          :abort        => 'abort.vsp',
-          :refund       => 'refund.vsp',
-          :repeat       => 'repeat.vsp',
-          :void         => 'void.vsp',
-          :manual       => 'manual.vsp',
-          :directrefund => 'directrefund.vsp',
-          :authorise    => 'authorise.vsp',
-          :cancel       => 'cancel.vsp'
+          :payment      => '/vspserver-register.vsp',
+          :release      => '/release.vsp',
+          :abort        => '/abort.vsp',
+          :refund       => '/refund.vsp',
+          :repeat       => '/repeat.vsp',
+          :void         => '/void.vsp',
+          :manual       => '/manual.vsp',
+          :directrefund => '/directrefund.vsp',
+          :authorise    => '/authorise.vsp',
+          :cancel       => '/cancel.vsp'
         },
         :live => {
-          :payment      => 'vspserver-register.vsp',
-          :release      => 'release.vsp',
-          :abort        => 'abort.vsp',
-          :refund       => 'refund.vsp',
-          :repeat       => 'repeat.vsp',
-          :void         => 'void.vsp',
-          :manual       => 'manual.vsp',
-          :directrefund => 'directrefund.vsp',
-          :authorise    => 'authorise.vsp',
-          :cancel       => 'cancel.vsp'
+          :payment      => '/vspserver-register.vsp',
+          :release      => '/release.vsp',
+          :abort        => '/abort.vsp',
+          :refund       => '/refund.vsp',
+          :repeat       => '/repeat.vsp',
+          :void         => '/void.vsp',
+          :manual       => '/manual.vsp',
+          :directrefund => '/directrefund.vsp',
+          :authorise    => '/authorise.vsp',
+          :cancel       => '/cancel.vsp'
         }
       },
       :direct => {
@@ -68,30 +68,30 @@ module Peeves
           :threedee     => 'VSPDirectCallback.asp'
         },
         :test => {
-          :payment      => 'vspdirect-register.vsp',
-          :release      => 'release.vsp',
-          :abort        => 'abort.vsp',
-          :refund       => 'refund.vsp',
-          :repeat       => 'repeat.vsp',
-          :void         => 'void.vsp',
-          :manual       => 'manual.vsp',
-          :directrefund => 'directrefund.vsp',
-          :authorise    => 'authorise.vsp',
-          :cancel       => 'cancel.vsp',
-          :threedee     => 'direct3dcallback.vsp'
+          :payment      => '/vspdirect-register.vsp',
+          :release      => '/release.vsp',
+          :abort        => '/abort.vsp',
+          :refund       => '/refund.vsp',
+          :repeat       => '/repeat.vsp',
+          :void         => '/void.vsp',
+          :manual       => '/manual.vsp',
+          :directrefund => '/directrefund.vsp',
+          :authorise    => '/authorise.vsp',
+          :cancel       => '/cancel.vsp',
+          :threedee     => '/direct3dcallback.vsp'
         },
         :live => {
-          :payment      => 'vspdirect-register.vsp',
-          :release      => 'release.vsp',
-          :abort        => 'abort.vsp',
-          :refund       => 'refund.vsp',
-          :repeat       => 'repeat.vsp',
-          :void         => 'void.vsp',
-          :manual       => 'manual.vsp',
-          :directrefund => 'directrefund.vsp',
-          :authorise    => 'authorise.vsp',
-          :cancel       => 'cancel.vsp',
-          :threedee     => 'direct3dcallback.vsp'
+          :payment      => '/vspdirect-register.vsp',
+          :release      => '/release.vsp',
+          :abort        => '/abort.vsp',
+          :refund       => '/refund.vsp',
+          :repeat       => '/repeat.vsp',
+          :void         => '/void.vsp',
+          :manual       => '/manual.vsp',
+          :directrefund => '/directrefund.vsp',
+          :authorise    => '/authorise.vsp',
+          :cancel       => '/cancel.vsp',
+          :threedee     => '/direct3dcallback.vsp'
         }
       }
     }
