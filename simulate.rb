@@ -46,7 +46,7 @@ puts payment_response.inspect
 
 # 3D Secure response handling
 three_dee_response = p.three_dee({:md   => "061835130918985507",
-                                  :pares => "testing"
+                                  :pareq => "testing"
               })
 
 puts three_dee_response.inspect
